@@ -16,11 +16,7 @@
   <div class="relative w-full sm:w-96 m-auto">
     <!-- Logo -->
     <header class="py-10 flex justify-center">
-      <img
-        class="w-48"
-        src="/assets/svg/trello-logo-blue.svg"
-        alt=""
-      />
+      <img class="w-48" src="/assets/svg/trello-logo-blue.svg" alt="" />
     </header>
     <!-- FIN Logo -->
 
@@ -39,11 +35,7 @@
             />
           </div>
           <div class="relative">
-            <button
-              class="w-full bg-green-apple hover:bg-green-apple-light text-white rounded p-2 text-base font-bold"
-            >
-              Continuar
-            </button>
+            <app-btn [typeBtn]="'submit'" [color]="'apple'">Continuar</app-btn>
           </div>
         </form>
 
@@ -55,7 +47,7 @@
             <button
               class="w-full flex align-center justify-center shadow-md rounded p-2 text-sm font-bold text-blue-p text-center hover:bg-gray-50"
             >
-              <img class="w-4 mr-2" src="/assets/icon/google.png" alt="">
+              <img class="w-4 mr-2" src="/assets/icon/google.png" alt="" />
               Continuar con Google
             </button>
           </div>
@@ -64,7 +56,7 @@
             <button
               class="w-full flex align-center justify-center shadow-md rounded p-2 text-sm font-bold text-blue-p text-center"
             >
-              <img class="w-4 mr-2" src="/assets/icon/microsoft.png" alt="">
+              <img class="w-4 mr-2" src="/assets/icon/microsoft.png" alt="" />
               Continuar con Microsoft
             </button>
           </div>
@@ -73,7 +65,7 @@
             <button
               class="w-full flex align-center justify-center shadow-md rounded p-2 text-sm font-bold text-blue-p text-center"
             >
-              <img class="w-4 mr-2" src="/assets/icon/apple.png" alt="">
+              <img class="w-4 mr-2" src="/assets/icon/apple.png" alt="" />
               Continuar con Apple
             </button>
           </div>
@@ -82,7 +74,7 @@
             <button
               class="w-full flex align-center justify-center shadow-md rounded p-2 text-sm font-bold text-blue-p text-center"
             >
-              <img class="w-4 mr-2" src="/assets/icon/slack.png" alt="">
+              <img class="w-4 mr-2" src="/assets/icon/slack.png" alt="" />
               Continuar con Slack
             </button>
           </div>
@@ -91,17 +83,17 @@
 
         <hr class="my-4 border-b-1 border-r-gray-300" />
 
-        <div class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row">
-          <ul class=" flex flex-col justify-center">
-            <li class="text-blue-600 font-light text-sm text-center pb-2 after:content-['•']">
-              <a href="" >
-                  ¿No puede iniciar sesión?
-              </a>
+        <div
+          class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
+        >
+          <ul class="flex flex-col justify-center">
+            <li
+              class="text-blue-600 font-light text-sm text-center pb-2 after:content-['•']"
+            >
+              <a href=""> ¿No puede iniciar sesión? </a>
             </li>
             <li class="text-blue-600 font-light text-sm text-center">
-              <a href="">
-                Regístrese para crear una cuenta
-              </a>
+              <a href=""> Regístrese para crear una cuenta </a>
             </li>
           </ul>
         </div>
@@ -109,21 +101,26 @@
     </div>
     <!-- Caja blanca de formulario -->
 
-
-    <div class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row py-6">
-          <a href="" class="text-blue-600 font-light text-xs" >
-              Política de Privacidad
-          </a>
-          <span class="text-gray-500 hidden md:block">•</span>
-          <a href="" class="text-blue-600 font-light text-xs text-center">
-            Condiciones de servicio
-          </a>
+    <div
+      class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row py-6"
+    >
+      <a href="" class="text-blue-600 font-light text-xs">
+        Política de Privacidad
+      </a>
+      <span class="text-gray-500 hidden md:block">•</span>
+      <a href="" class="text-blue-600 font-light text-xs text-center">
+        Condiciones de servicio
+      </a>
     </div>
 
     <footer class="flex justify-center flex-col w-96 fixed bottom-0 pb-10">
-      <hr class="border-b-2 border-r-gray-500">
+      <hr class="border-b-2 border-r-gray-500" />
       <div class="flex justify-center">
-        <img class="w-40 my-4" src="/assets/svg/atlassian-logo-blue-small.svg" alt="">
+        <img
+          class="w-40 my-4"
+          src="/assets/svg/atlassian-logo-blue-small.svg"
+          alt=""
+        />
       </div>
       <div>
         <ul class="flex justify-center gap-2">
@@ -154,11 +151,6 @@
         </ul>
       </div>
     </footer>
-
   </div>
   <!-- FIN Contenido de Inicio -->
 </div>
-
-
-
-
