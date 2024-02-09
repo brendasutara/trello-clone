@@ -20,12 +20,10 @@ export class BtnComponent {
     return {
       'bg-green-apple': this.color === 'apple',
       'hover:bg-green-apple-light': this.color === 'apple',
-      'bg-primary-700': this.color === 'primary',
-      'hover:bg-primary-800': this.color === 'primary',
-      'focus:ring-primary-300': this.color === 'primary',
+      'bg-blue-600': this.color === 'primary',
+      'hover:bg-blue-800': this.color === 'primary',
       'bg-red-700': this.color === 'red',
       'hover:bg-red-800': this.color === 'red',
-      'focus:ring-red-300': this.color === 'red',
     };
   }
 }

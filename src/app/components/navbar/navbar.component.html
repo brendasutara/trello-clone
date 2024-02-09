@@ -1,0 +1,70 @@
+<nav class="border-gray-300 px-6 border py-1">
+  <div class="flex flex-wrap justify-between items-center">
+    <div class="flex items-center">
+      <a routerLink="/">
+        <img
+          loading="lazy"
+          class="w-20 mr-8"
+          src="/assets/images/logo/logo-gradient-neutral-trello.png"
+          alt="logo"
+        />
+      </a>
+      <div class="flex items-center">
+        <ul class="flex items-center space-x-2 text-sm font-medium">
+          <li>
+            <a
+              class="block py-3 px-4 text-gray-800"
+              >Espacios de trabajo</a
+            >
+          </li>
+          <li>
+            <a
+              class="block py-3 px-4 text-gray-800"
+              >Reciente</a
+            >
+          </li>
+          <li>
+            <a
+              class="block py-3 px-4 text-gray-800"
+              >Marcado</a
+            >
+          </li>
+          <li>
+            <a
+              class="block py-3 px-4 text-gray-800"
+              >Plantilla</a
+            >
+          </li>
+          <li>
+            <app-btn [typeBtn]="'submit'" [color]="'primary'">Crear</app-btn>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <button
+        type="button"
+        class="flex rounded-full"
+        aria-expanded="false"
+        (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin"
+      >
+        <img
+          class="w-8 h-8 rounded-full"
+          src="https://api.lorem.space/image/face?w=400&h=400"
+          alt="user photo"
+        />
+      </button>
+      <ng-template
+        cdkConnectedOverlay
+        [cdkConnectedOverlayOrigin]="menuOverlay"
+        [cdkConnectedOverlayOpen]="isOpen"
+      >
+        <ul class="example-list">
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+      </ng-template>
+    </div>
+  </div>
+</nav>
