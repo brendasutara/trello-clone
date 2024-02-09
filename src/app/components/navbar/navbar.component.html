@@ -12,28 +12,16 @@
       <div class="flex items-center">
         <ul class="flex items-center space-x-2 text-sm font-medium">
           <li>
-            <a
-              class="block py-3 px-4 text-gray-800"
-              >Espacios de trabajo</a
-            >
+            <a class="block py-3 px-4 text-gray-800">Espacios de trabajo</a>
           </li>
           <li>
-            <a
-              class="block py-3 px-4 text-gray-800"
-              >Reciente</a
-            >
+            <a class="block py-3 px-4 text-gray-800">Reciente</a>
           </li>
           <li>
-            <a
-              class="block py-3 px-4 text-gray-800"
-              >Marcado</a
-            >
+            <a class="block py-3 px-4 text-gray-800">Marcado</a>
           </li>
           <li>
-            <a
-              class="block py-3 px-4 text-gray-800"
-              >Plantilla</a
-            >
+            <a class="block py-3 px-4 text-gray-800">Plantilla</a>
           </li>
           <li>
             <app-btn [typeBtn]="'submit'" [color]="'primary'">Crear</app-btn>
@@ -46,7 +34,9 @@
         type="button"
         class="flex rounded-full"
         aria-expanded="false"
-        (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin"
+        (click)="isOpen = !isOpen"
+        cdkOverlayOrigin
+        #menuOverlay="cdkOverlayOrigin"
       >
         <img
           class="w-8 h-8 rounded-full"
@@ -59,11 +49,73 @@
         [cdkConnectedOverlayOrigin]="menuOverlay"
         [cdkConnectedOverlayOpen]="isOpen"
       >
-        <ul class="example-list">
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-        </ul>
+      <div
+      class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+    >
+      <div class="py-3 px-4 flex justify-between">
+        <span class="block text-sm text-center text-gray-900">Account</span>
+        <button (click)="isOpen = !isOpen" class="block text-sm text-gray-900">
+          x
+        </button>
+      </div>
+      <div class="py-3 px-4 flex items-center space-x-4">
+        <img
+          class="w-10 h-10 rounded-full"
+          src="https://api.lorem.space/image/face?w=400&h=400"
+          alt=""
+        />
+        <div class="space-y-1">
+          <div>Jese Leos</div>
+          <div class="text-sm text-gray-500">sutarabrenda|gmail.com</div>
+        </div>
+      </div>
+      <ul class="py-1" >
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+            >Profile</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+            >Activity</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+            >Cards</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+            >Settings</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+            >Sign out</a
+          >
+        </li>
+      </ul>
+      <ul class="py-1">
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-4 text-sm text-gray-700"
+            >Log out</a
+          >
+        </li>
+      </ul>
+    </div>
       </ng-template>
     </div>
   </div>
