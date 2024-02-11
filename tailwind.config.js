@@ -18,6 +18,11 @@ module.exports = {
           xl: '1024px',
           '2xl': '1536px',
         },
+      },
+      backgroundImage: {
+        'monte': "url('/assets/bg/monte.jpg')",
+        'azteca': "url('/assets/bg/azteca.jpg')",
+        'lilas': "url('/assets/bg/lilas.jpg')",
       }
     },
   },

@@ -24,6 +24,8 @@ export class BtnComponent {
       'hover:bg-blue-800': this.color === 'primary',
       'bg-red-700': this.color === 'red',
       'hover:bg-red-800': this.color === 'red',
+      'bg-white/30': this.color === "white",
+      'hover:bg-white/50': this.color === "white",
     };
   }
 }
