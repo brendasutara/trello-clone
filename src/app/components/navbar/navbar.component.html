@@ -27,6 +27,7 @@
               cdkConnectedOverlay
               [cdkConnectedOverlayOrigin]="espacioOverlay"
               [cdkConnectedOverlayOpen]="isOpenEspaciodeTrabajo"
+              (overlayOutsideClick)="isOpenEspaciodeTrabajo = !isOpenEspaciodeTrabajo"
             >
               <div
                 class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg p-4"
@@ -98,6 +99,7 @@
               cdkConnectedOverlay
               [cdkConnectedOverlayOrigin]="espacioOverlay"
               [cdkConnectedOverlayOpen]="isOpenReciente"
+              (overlayOutsideClick)="isOpenReciente = !isOpenReciente"
             >
               <div
                 class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg p-2"
@@ -188,6 +190,8 @@
           cdkConnectedOverlay
           [cdkConnectedOverlayOrigin]="perfilOverlay"
           [cdkConnectedOverlayOpen]="isOpen"
+          (overlayOutsideClick)="isOpen = !isOpen"
+
         >
           <div
             class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg"

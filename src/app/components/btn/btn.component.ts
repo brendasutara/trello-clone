@@ -9,7 +9,36 @@ import { Component, Input } from '@angular/core';
 })
 export class BtnComponent {
   @Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
-  @Input() color = 'apple';
+
+  @Input() color: 'apple' | 'primary' | 'danger' | 'white' | 'grayLight' = 'primary';
+
+  mapColors = {
+    apple: {
+      'bg-green-apple': true,
+      'hover:bg-green-apple-light': true,
+      'text-white': true
+    },
+    primary: {
+      'bg-blue-600': true,
+      'hover:bg-blue-800': true,
+      'text-white': true
+    },
+    danger: {
+      'bg-red-700': true,
+      'hover:bg-red-800': true,
+      'text-white': true
+    },
+    white: {
+      'bg-white/30': true,
+      'hover:bg-white/50': true,
+      'text-gray-700': true
+    },
+    grayLight: {
+      'bg-gray-300/60': true,
+      'hover:bg-gray-300': true,
+      'text-gray-700': true
+    }
+  }
 
   constructor() { }
 
@@ -17,19 +46,10 @@ export class BtnComponent {
   }
 
   get colors() {
-    return {
-      'text-white': this.color === 'apple' || this.color === 'primary' || this.color === 'red',
-      'text-gray-700': this.color === "white" || this.color === "gray-light",
-      'bg-green-apple': this.color === 'apple',
-      'hover:bg-green-apple-light': this.color === 'apple',
-      'bg-blue-600': this.color === 'primary',
-      'hover:bg-blue-800': this.color === 'primary',
-      'bg-red-700': this.color === 'red',
-      'hover:bg-red-800': this.color === 'red',
-      'bg-white/30': this.color === "white",
-      'hover:bg-white/50': this.color === "white",
-      'bg-gray-300/60': this.color === "gray-light",
-      'hover:bg-gray-300': this.color === "gray-light",
-    };
+    const colors = this.mapColors[this.color];
+    if (colors) {
+      return colors;
+    }
+    return {};
   }
 }

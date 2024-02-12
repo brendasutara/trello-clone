@@ -24,7 +24,7 @@
         <app-btn
             class="w-24 flex justify-center mt-1"
             [typeBtn]="'button'"
-            [color]="'gray-light'">
+            [color]="'grayLight'">
             <fa-icon class="text-gray-800 mx-1" [icon]="faEye"></fa-icon>
               Seguir
           </app-btn>
@@ -40,7 +40,7 @@
             <app-btn
               [typeBtn]="'button'"
               (click)="closeWithRta(false)"
-              [color]="'gray-light'">
+              [color]="'grayLight'">
                 No
             </app-btn>
             <app-btn
@@ -73,33 +73,47 @@
       <!-- Añadir a la tarjeta -->
       <div class="flex space-y-2 flex-col">
         <p class="text-sm font-semibold text-gray-500">Añadir a la tarjeta</p>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
-          Miembros
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
+            <span>Miembros</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
-          Etiquetas
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
+            <span>Etiquetas</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
-          Checklist
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
+            <span>Checklist</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
-          Fechas
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
+            <span>Fechas</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faPaperclip"></fa-icon>
-          Adjunto
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faPaperclip"></fa-icon>
+            <span>Adjunto</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faWindowMaximize"></fa-icon>
-          Portada
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faWindowMaximize"></fa-icon>
+            <span>Portada</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faFolder"></fa-icon>
-          Campos personalizados
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faFolder"></fa-icon>
+            <span>Campos personalizados</span>
+          </span>
         </app-btn>
       </div>
       <!-- FIN Añadir a la tarjeta -->
@@ -133,26 +147,36 @@
       <!-- Acciones -->
       <div class="flex space-y-2 flex-col">
         <p class="text-sm font-semibold text-gray-500">Acciones</p>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faArrowRight"></fa-icon>
-          Mover
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faArrowRight"></fa-icon>
+            <span>Mover</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faCopy"></fa-icon>
-          Copiar
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faCopy"></fa-icon>
+            <span>Copiar</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faBox"></fa-icon>
-          Crear plantilla
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faBox"></fa-icon>
+            <span>Crear plantilla</span>
+          </span>
         </app-btn>
         <hr>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faBoxArchive"></fa-icon>
-          Archivar
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faBoxArchive"></fa-icon>
+            <span>Archivar</span>
+          </span>
         </app-btn>
-        <app-btn typeBtn="button" color="gray-light">
-          <fa-icon class="text-gray-800" [icon]="faShareNodes"></fa-icon>
-          Compartir
+        <app-btn typeBtn="button" color="grayLight">
+          <span class="flex space-x-2 text-left">
+            <fa-icon class="text-gray-800" [icon]="faShareNodes"></fa-icon>
+            <span>Compartir</span>
+          </span>
         </app-btn>
       </div>
       <!-- FIN Acciones -->
