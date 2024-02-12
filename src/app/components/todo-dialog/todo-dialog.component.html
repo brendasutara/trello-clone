@@ -2,52 +2,161 @@
   <button (click)="close()" type="button" class="absolute top-3 right-3 focus:outline-none p-2">
     <fa-icon [icon]="faClose"></fa-icon>
   </button>
-  <div class="flex space-x-2 mb-5">
+  <!-- Encabezado -->
+  <div class="flex space-x-4 mb-5">
     <fa-icon class="text-gray-800" [icon]="faCheckToSlot"></fa-icon>
     <div class="flex flex-col">
       <h3 class="text-lg font-semibold text-gray-800">{{ todo.title }}</h3>
-      <p class="text-sm text-gray-500">in list ToDo</p>
+      <p class="text-sm text-gray-500">
+        <span>in list </span>
+        <span class="underline">ToDo</span>
+      </p>
     </div>
   </div>
-  <div class="flex w-full gap-4">
-    <div class="flex space-x-2 mb-5 w-4/6">
-      <fa-icon class="text-gray-800" [icon]="faBars"></fa-icon>
-      <div class="flex flex-col">
-        <h3 class="text-lg font-semibold text-gray-800">Description</h3>
-        <p class="text-sm text-gray-500">{{ todo.description }}</p>
-        <div class="flex space-x-2 mt-4">
-          <app-btn
+  <!-- Encabezado -->
+
+  <div class="flex w-full mt-4">
+    <!-- contenido central -->
+    <div class="w-auto space-y-6 pr-2">
+
+      <div class="pl-8">
+        <p class="text-sm font-semibold text-gray-500">Notificaciones</p>
+        <app-btn
+            class="w-24 flex justify-center mt-1"
             [typeBtn]="'button'"
-            (click)="closeWithRta(false)"
             [color]="'gray-light'">
-              No
+            <fa-icon class="text-gray-800 mx-1" [icon]="faEye"></fa-icon>
+              Seguir
           </app-btn>
-          <app-btn
-            [typeBtn]="'button'"
-            (click)="closeWithRta(true)"
-            [color]="'apple'">
-              Si
-          </app-btn>
+      </div>
+
+      <!-- Descripción -->
+      <div class="flex w-full space-x-4 mb-5">
+        <fa-icon class="text-gray-800" [icon]="faBars"></fa-icon>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-lg font-semibold text-gray-800">Descripción</h3>
+          <p class="text-sm bg-gray-300/60 text-gray-800 p-3 rounded">{{ todo.description }}</p>
+          <div class="flex space-x-2 mt-4">
+            <app-btn
+              [typeBtn]="'button'"
+              (click)="closeWithRta(false)"
+              [color]="'gray-light'">
+                No
+            </app-btn>
+            <app-btn
+              [typeBtn]="'button'"
+              (click)="closeWithRta(true)"
+              [color]="'apple'">
+                Si
+            </app-btn>
+          </div>
         </div>
       </div>
+      <!-- FIN Descripción -->
+
+      <!-- Actividad -->
+      <div class="flex w-full space-x-4 mb-5">
+        <fa-icon class="text-gray-800" [icon]="faBars"></fa-icon>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-lg font-semibold text-gray-800">Actividad</h3>
+          <p class="w-full bg-white shadow-sm border-2 p-2 rounded-xl mt-2 border-x-gray-300 cursor-pointer hover:border-blue-600">
+              Escriba un comentario
+          </p>
+        </div>
+      </div>
+      <!-- FIN Actividad -->
+
     </div>
-    <div class="flex flex-auto space-y-2 flex-col">
-      <app-btn typeBtn="button" color="gray-light">
-        <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
-        Members
-      </app-btn>
-      <app-btn typeBtn="button" color="gray-light">
-        <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
-        Labels
-      </app-btn>
-      <app-btn typeBtn="button" color="gray-light">
-        <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
-        Checklist
-      </app-btn>
-      <app-btn typeBtn="button" color="gray-light">
-        <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
-        Dates
-      </app-btn>
-    </div>
+    <!-- Aside content -->
+    <aside class="flex space-y-4 flex-col w-full pl-2">
+
+      <!-- Añadir a la tarjeta -->
+      <div class="flex space-y-2 flex-col">
+        <p class="text-sm font-semibold text-gray-500">Añadir a la tarjeta</p>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faUser"></fa-icon>
+          Miembros
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faTag"></fa-icon>
+          Etiquetas
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faCheckSquare"></fa-icon>
+          Checklist
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faClock"></fa-icon>
+          Fechas
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faPaperclip"></fa-icon>
+          Adjunto
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faWindowMaximize"></fa-icon>
+          Portada
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faFolder"></fa-icon>
+          Campos personalizados
+        </app-btn>
+      </div>
+      <!-- FIN Añadir a la tarjeta -->
+
+      <!-- Power-Ups -->
+      <div class="flex space-y-2 flex-col">
+        <p class="text-sm font-semibold text-gray-500">Power-Ups</p>
+        <div class="hover:bg-gray-300 rounded">
+          <button
+          class="p-2 text-left text-sm font-semibold text-gray-800"
+          >
+            <fa-icon [icon]="faPlus" class="pr-2"></fa-icon>Añadir Power-Ups
+          </button>
+        </div>
+      </div>
+      <!-- FIN Power-Ups -->
+
+      <!-- Automatización -->
+      <div class="flex space-y-2 flex-col">
+        <p class="text-sm font-semibold text-gray-500">Automatización</p>
+        <div class="hover:bg-gray-300 rounded">
+          <button
+          class="p-2 text-left text-sm font-semibold text-gray-800"
+          >
+            <fa-icon [icon]="faPlus" class="pr-2"></fa-icon>Añadir botón
+          </button>
+        </div>
+      </div>
+      <!-- FIN Automatización -->
+
+      <!-- Acciones -->
+      <div class="flex space-y-2 flex-col">
+        <p class="text-sm font-semibold text-gray-500">Acciones</p>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faArrowRight"></fa-icon>
+          Mover
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faCopy"></fa-icon>
+          Copiar
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faBox"></fa-icon>
+          Crear plantilla
+        </app-btn>
+        <hr>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faBoxArchive"></fa-icon>
+          Archivar
+        </app-btn>
+        <app-btn typeBtn="button" color="gray-light">
+          <fa-icon class="text-gray-800" [icon]="faShareNodes"></fa-icon>
+          Compartir
+        </app-btn>
+      </div>
+      <!-- FIN Acciones -->
+
+    </aside>
   </div>
 </div>

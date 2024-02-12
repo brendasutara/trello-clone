@@ -3,7 +3,7 @@ import { Dialog, DialogRef, DIALOG_DATA, DialogModule } from '@angular/cdk/dialo
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faClose, faCheckToSlot, faBars, faUser, faTag, faCheckSquare, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faCheckToSlot, faBars, faUser, faTag, faCheckSquare, faClock, faEye, faPlus, faPaperclip, faWindowMaximize, faFolder, faArrowRight, faCopy, faBox, faBoxArchive, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { BtnComponent } from '../btn/btn.component';
 import { ToDo } from '../../models/todo.model';
 
@@ -30,6 +30,16 @@ export class TodoDialogComponent {
   faTag = faTag;
   faCheckSquare = faCheckSquare;
   faClock = faClock;
+  faEye = faEye;
+  faPlus = faPlus;
+  faPaperclip = faPaperclip;
+  faWindowMaximize = faWindowMaximize;
+  faFolder = faFolder;
+  faArrowRight = faArrowRight;
+  faCopy = faCopy;
+  faBox = faBox;
+  faBoxArchive = faBoxArchive;
+  faShareNodes = faShareNodes;
 
   todo: ToDo;
 
