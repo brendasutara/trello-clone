@@ -1,1 +1,52 @@
-<p>register-form works!</p>
+<h1 class="font-bold text-blue-p text-base text-center pb-7">
+  Regístrate para continuar
+</h1>
+<form novalidate class="space-y-4">
+  <div class="relative space-y-4">
+    <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Introduzca su nombre"
+    />
+    <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Introduzca el correo electrónico"
+    />
+    <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Introducir contraseña"
+    />
+    <div>
+      <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Confirma contraseña"
+      />
+      <p class="text-xs pt-1">
+        <span>Al registrarme, acepto los</span>
+        <span class="text-blue-500">
+          <a href="https://www.atlassian.com/legal/cloud-terms-of-service">
+            Términos de servicio de Atlassian Cloud
+          </a>
+        </span>
+        <span>y reconozco la </span>
+        <span class="text-blue-500">
+          <a href="https://www.atlassian.com/legal/privacy-policy#what-this-policy-covers">
+            Política de privacidad.
+          </a>
+        </span>
+      </p>
+    </div>
+
+  </div>
+  <div class="relative">
+    <app-btn
+      routerLink="/app/boards"
+      [typeBtn]="'submit'"
+      [color]="'apple'">
+      Inscribirse
+    </app-btn>
+  </div>
+</form>

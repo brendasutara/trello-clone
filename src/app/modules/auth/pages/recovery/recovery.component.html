@@ -1,1 +1,52 @@
-<p>recovery works!</p>
+<div class="w-screen h-screen bg-white sm:bg-gray-100 relative">
+
+  <app-background></app-background>
+
+  <!-- Contenido de Inicio -->
+  <div class="relative w-full sm:w-96 m-auto">
+    <!-- Logo -->
+    <header class="py-10 flex justify-center">
+      <img class="w-48" src="/assets/svg/trello-logo-blue.svg" alt="" />
+    </header>
+    <!-- FIN Logo -->
+
+    <!-- Caja blanca de formulario -->
+    <div class="bg-white rounded shadow-none sm:shadow-lg p-8">
+      <div class="mb-4">
+
+        <app-recovery-form></app-recovery-form>
+
+        <hr class="my-4 border-b-1 border-r-gray-300" />
+
+        <div
+          class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row"
+        >
+          <ul class="flex flex-col justify-center">
+            <li
+              class="text-blue-600 font-light text-sm text-center pb-2"
+            >
+              <a routerLink="/"> Volver a iniciar sesión </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Caja blanca de formulario -->
+
+    <div
+      class="flex justify-center items-center space-x-0 space-y-2 md:space-x-2 md:space-y-0 flex-col md:flex-row py-6"
+    >
+      <a href="" class="text-blue-600 font-light text-xs">
+        Política de Privacidad
+      </a>
+      <span class="text-gray-500 hidden md:block">•</span>
+      <a href="" class="text-blue-600 font-light text-xs text-center">
+        Condiciones de servicio
+      </a>
+    </div>
+
+    <app-footer></app-footer>
+
+  </div>
+  <!-- FIN Contenido de Inicio -->
+</div>

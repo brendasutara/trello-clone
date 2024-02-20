@@ -1,1 +1,25 @@
-<p>recovery-form works!</p>
+<h1 class="font-bold text-blue-p text-base text-center pb-7">
+  Establece tu nueva contraseña
+</h1>
+<form novalidate class="space-y-4">
+  <div class="relative space-y-4">
+    <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Ingrese su nueva contraseña"
+    />
+    <input
+      class="w-full bg-gray-50 rounded border-2 border-gray-300"
+      type="text"
+      placeholder="Confirmar nueva contraseña"
+    />
+  </div>
+  <div class="relative">
+    <app-btn
+      routerLink="/app/boards"
+      [typeBtn]="'submit'"
+      [color]="'apple'">
+      Recuperación
+    </app-btn>
+  </div>
+</form>
