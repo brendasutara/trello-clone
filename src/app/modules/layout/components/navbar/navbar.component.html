@@ -1,0 +1,320 @@
+<nav class="border-gray-300 px-6 border py-1 h-14">
+  <div class="flex flex-wrap justify-between items-center">
+    <div class="flex items-center">
+      <a routerLink="/app/boards">
+        <img
+          loading="lazy"
+          class="w-20 mr-8"
+          src="/assets/images/logo/logo-gradient-neutral-trello.png"
+          alt="logo"
+        />
+      </a>
+      <div class="flex items-center">
+        <ul class="flex items-center space-x-2 text-sm font-medium">
+          <li class="cursor-pointer">
+            <a
+              routerLink="/app/boards"
+              class="block py-3 px-4 text-gray-800 hover:bg-gray-200 rounded-sm"
+              (click)="isOpenEspaciodeTrabajo = !isOpenEspaciodeTrabajo"
+              cdkOverlayOrigin
+              #espacioOverlay="cdkOverlayOrigin"
+            >
+              Espacios de trabajo
+              <button class="text-gray-800" type="button">
+                <fa-icon [icon]="faChevronDown"></fa-icon>
+              </button>
+            </a>
+            <ng-template
+              cdkConnectedOverlay
+              [cdkConnectedOverlayOrigin]="espacioOverlay"
+              [cdkConnectedOverlayOpen]="isOpenEspaciodeTrabajo"
+              (overlayOutsideClick)="isOpenEspaciodeTrabajo = !isOpenEspaciodeTrabajo"
+            >
+              <div
+                class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg p-4"
+              >
+                <h2 class="block font-bold py-4 text-xs text-gray-700">
+                  Tus espacios de trabajo
+                </h2>
+                <div
+                  routerLink="/app/board"
+                  class="flex items-center space-x-2 hover:bg-gray-200 rounded cursor-pointer"
+                >
+                  <img
+                    class="w-10 h-10 rounded-lg pl-1"
+                    src="https://api.lorem.space/image/face?w=400&h=400"
+                    alt=""
+                  />
+                  <div class="space-y-1">
+                    <div class="text-sm block py-2 px-4 text-gray-700">
+                      Espacio de trabajo de Brenda Sutara
+                    </div>
+                  </div>
+                </div>
+                <h2 class="block font-bold py-4 text-xs text-gray-700">
+                  Espacios de trabajo en los que eres invitado
+                </h2>
+                <div
+                  routerLink="/app/board"
+                  class="flex items-center space-x-2 hover:bg-gray-200 rounded cursor-pointer"
+                >
+                  <img
+                    class="w-10 h-10 rounded-lg pl-1"
+                    src="https://api.lorem.space/image/face?w=400&h=400"
+                    alt=""
+                  />
+                  <div class="space-y-1">
+                    <div class="text-sm block py-2 px-4 text-gray-700">
+                      Services Development
+                    </div>
+                  </div>
+                </div>
+                <div
+                  routerLink="/app/board"
+                  class="flex items-center space-x-2 hover:bg-gray-200 rounded cursor-pointer"
+                >
+                  <img
+                    class="w-10 h-10 rounded-lg pl-1"
+                    src="https://api.lorem.space/image/face?w=400&h=400"
+                    alt=""
+                  />
+                  <div class="space-y-1">
+                    <div class="text-sm block py-2 px-4 text-gray-700">
+                      Services Development
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </li>
+          <li class="cursor-pointer">
+            <a
+              routerLink="/app/board"
+              class="block py-3 px-4 text-gray-800 hover:bg-gray-200 rounded-sm"
+              (click)="isOpenReciente = !isOpenReciente"
+              cdkOverlayOrigin
+              #recienteOverlay="cdkOverlayOrigin"
+            >
+              Reciente
+              <button class="text-gray-800" type="button">
+                <fa-icon [icon]="faChevronDown"></fa-icon>
+              </button>
+            </a>
+            <ng-template
+              cdkConnectedOverlay
+              [cdkConnectedOverlayOrigin]="espacioOverlay"
+              [cdkConnectedOverlayOpen]="isOpenReciente"
+              (overlayOutsideClick)="isOpenReciente = !isOpenReciente"
+            >
+              <div
+                class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg p-2"
+              >
+                <div
+                  routerLink="/app/board"
+                  class="flex items-center space-x-2 hover:bg-gray-200 rounded cursor-pointer"
+                >
+                  <img
+                    class="w-15 h-10 rounded-lg pl-1"
+                    src="https://api.lorem.space/image/face?w=600&h=400"
+                    alt=""
+                  />
+                  <div class="p-2">
+                    <h2 class="text-sm font-bold block text-gray-700">
+                      Services Development
+                    </h2>
+                    <p class="text-xs">Nombre de la empresa</p>
+                  </div>
+                </div>
+
+                <div
+                  routerLink="/app/board"
+                  class="flex items-center space-x-2 hover:bg-gray-200 rounded cursor-pointer"
+                >
+                  <img
+                    class="w-15 h-10 rounded-lg pl-1"
+                    src="https://api.lorem.space/image/face?w=600&h=400"
+                    alt=""
+                  />
+                  <div class="p-2">
+                    <h2 class="text-sm font-bold block text-gray-700">
+                      Services Development
+                    </h2>
+                    <p class="text-xs">Nombre de la empresa</p>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </li>
+          <li>
+            <a
+              routerLink="/app/boards"
+              class="block py-3 px-4 text-gray-800 hover:bg-gray-200 rounded-sm cursor-pointer"
+              >
+              Marcado
+              <button class="text-gray-800" type="button">
+                <fa-icon [icon]="faChevronDown"></fa-icon>
+              </button>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="/app/boards"
+              class="block py-3 px-4 text-gray-800 hover:bg-gray-200 rounded-sm cursor-pointer"
+              >
+              Plantilla
+              <button class="text-gray-800" type="button">
+                <fa-icon [icon]="faChevronDown"></fa-icon>
+              </button>
+            </a>
+          </li>
+          <li>
+            <app-btn [typeBtn]="'submit'" [color]="'primary'">Crear</app-btn>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div class="flex space-x-2 gap-x-2">
+        <button class="text-gray-800 text-xl" type="button">
+          <fa-icon [icon]="faBell"></fa-icon>
+        </button>
+        <button class="text-gray-800 text-xl" type="button">
+          <fa-icon [icon]="faCircleQuestion"></fa-icon>
+        </button>
+        <button
+        type="button"
+        class="flex rounded-full"
+        aria-expanded="false"
+        (click)="isOpen = !isOpen"
+        cdkOverlayOrigin
+        #perfilOverlay="cdkOverlayOrigin"
+      >
+        <img
+          class="w-8 h-8 rounded-full"
+          src="https://api.lorem.space/image/face?w=400&h=400"
+          alt="user photo"
+        />
+        </button>
+        <ng-template
+          cdkConnectedOverlay
+          [cdkConnectedOverlayOrigin]="perfilOverlay"
+          [cdkConnectedOverlayOpen]="isOpen"
+          (overlayOutsideClick)="isOpen = !isOpen"
+
+        >
+          <div
+            class="z-50 my-4 w-60 text-base list-none bg-white border border-gray-100 rounded-lg shadow-lg"
+          >
+            <div class="py-3 px-4 flex justify-between">
+              <span class="block text-sm text-center text-gray-900">Cuenta</span>
+              <button
+                (click)="isOpen = !isOpen"
+                class="block text-sm text-gray-900"
+              >
+                x
+              </button>
+            </div>
+            <div class="py-3 px-4 flex items-center space-x-4">
+              <img
+                class="w-10 h-10 rounded-full"
+                src="https://api.lorem.space/image/face?w=400&h=400"
+                alt=""
+              />
+              <div class="space-y-1">
+                <div>Brenda Sutara</div>
+                <div class="text-sm text-gray-500">sutarabrenda|gmail.com</div>
+              </div>
+            </div>
+            <ul class="py-1">
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Cambiar cuentas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Gestionar cuenta</a
+                >
+              </li>
+            </ul>
+            <hr class="border-b border-gray-100" />
+            <ul class="py-1">
+              <li>
+                <h2
+                  class="block font-bold py-2 px-4 text-xs text-gray-700 uppercase"
+                >
+                  TRELLO
+                </h2>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Perfil y visibilidad</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Actividad</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Tarjetas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Ajustes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Temas</a
+                >
+              </li>
+            </ul>
+            <hr class="border-b border-gray-100" />
+            <ul class="py-1">
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Ayuda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600"
+                  >Accesos directos</a
+                >
+              </li>
+            </ul>
+            <hr class="border-b border-gray-100" />
+            <ul class="py-1">
+              <li>
+                <a href="#" class="block py-2 px-4 text-sm text-gray-700"
+                  >Cerrar sesión</a
+                >
+              </li>
+            </ul>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+</nav>

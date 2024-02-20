@@ -1,30 +1,30 @@
 import { Routes } from '@angular/router';
 
-import { LoginComponent } from './pages/login/login.component';
-import { BoardsComponent } from './pages/boards/boards.component';
-import { BoardComponent } from './pages/board/board.component';
-import { ScrollComponent } from './pages/scroll/scroll.component';
-import { TableComponent } from './pages/table/table.component';
-
 export const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
+    path: '',
+    loadComponent: () => import('./modules/auth/pages/login/login.component').then(m => m.LoginComponent),
   },
   {
-    path: 'boards',
-    component: BoardsComponent
-  },
-  {
-    path: 'board',
-    component: BoardComponent
-  },
-  {
-    path: 'scroll',
-    component: ScrollComponent
-  },
-  {
-    path: 'table',
-    component: TableComponent
+    path: 'app',
+    loadComponent: () => import('./modules/layout/components/layout/layout.component').then(m => m.LayoutComponent),
+    children: [
+      {
+        path: 'boards',
+        loadComponent: () => import('./modules/boards/pages/boards/boards.component').then(m => m.BoardsComponent),
+      },
+      {
+        path: 'board',
+        loadComponent: () => import('./modules/boards/pages/board/board.component').then(m => m.BoardComponent),
+      },
+      {
+        path: 'scroll',
+        loadComponent: () => import('./modules/shared/users/pages/scroll/scroll.component').then(m => m.ScrollComponent),
+      },
+      {
+        path: 'table',
+        loadComponent: () => import('./modules/shared/users/pages/table/table.component').then(m => m.TableComponent),
+      },
+    ]
   },
 ];
