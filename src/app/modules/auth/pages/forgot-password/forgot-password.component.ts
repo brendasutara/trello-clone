@@ -4,6 +4,7 @@ import { BackgroundComponent } from '../../components/background/background.comp
 import { FooterComponent } from '../../components/footer/footer.component';
 import { ForgotPasswordFormComponent } from '../../components/forgot-password-form/forgot-password-form.component';
 import { RouterLinkWithHref } from '@angular/router';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-forgot-password',
@@ -13,7 +14,8 @@ import { RouterLinkWithHref } from '@angular/router';
     BackgroundComponent,
     FooterComponent,
     ForgotPasswordFormComponent,
-    RouterLinkWithHref
+    RouterLinkWithHref,
+    HeaderComponent
   ],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss'

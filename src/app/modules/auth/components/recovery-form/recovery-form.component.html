@@ -1,25 +1,84 @@
 <h1 class="font-bold text-blue-p text-base text-center pb-7">
   Establece tu nueva contraseña
 </h1>
-<form novalidate class="space-y-4">
-  <div class="relative space-y-4">
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Ingrese su nueva contraseña"
-    />
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Confirmar nueva contraseña"
-    />
+<form [formGroup]="form" novalidate class="space-y-4" (ngSubmit)="recovery()">
+  <!-- Primer input Password -->
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        formControlName="newPassword"
+        placeholder="Enter new password"
+        [type]="showPassword ? 'text' : 'password'"/>
+      <button
+        type="button"
+        class="text-gray-500 p-2 absolute right-2"
+        (click)="showPassword = !showPassword">
+          <fa-icon [icon]="showPassword ? faEye : faEyeSlash">
+          </fa-icon>
+      </button>
+    </div>
+    <div *ngIf="form.controls.newPassword.touched && form.controls.newPassword.invalid">
+      <p
+        *ngIf="form.controls.newPassword.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.newPassword.hasError('minlength')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
   </div>
+  <!-- FIN Primer input Password -->
+
+  <!-- Segundo input Confirm Password -->
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        formControlName="confirmPassword"
+        placeholder="Confirm new password"
+        type="password"/>
+    </div>
+    <div
+      *ngIf="
+        form.controls.confirmPassword.touched &&
+        form.controls.confirmPassword.invalid">
+      <p
+        *ngIf="form.controls.confirmPassword.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.confirmPassword.hasError('minlength')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
+  </div>
+  <!-- FIN Segundo input Confirm Password -->
+
+  <div *ngIf="form.controls.confirmPassword.touched">
+    <p
+      *ngIf="form.hasError('mismatch')"
+      class="font-medium text-red-500 text-xs mt-1 ml-1"
+    >
+      La contraseña no es la misma
+    </p>
+  </div>
+
+  <!-- Button -->
   <div class="relative">
     <app-btn
       routerLink="/app/boards"
       [typeBtn]="'submit'"
-      [color]="'apple'">
+      [color]="'apple'"
+      [loading]="status === 'loading'">
       Recuperación
     </app-btn>
   </div>
+  <!-- FIN Button -->
+
 </form>

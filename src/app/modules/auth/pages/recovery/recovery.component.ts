@@ -5,6 +5,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { BtnComponent } from '../../../shared/components/btn/btn.component';
 import { RecoveryFormComponent } from '../../components/recovery-form/recovery-form.component';
 import { RouterLinkWithHref } from '@angular/router';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-recovery',
@@ -15,7 +16,8 @@ import { RouterLinkWithHref } from '@angular/router';
     FooterComponent,
     BtnComponent,
     RecoveryFormComponent,
-    RouterLinkWithHref
+    RouterLinkWithHref,
+    HeaderComponent
   ],
   templateUrl: './recovery.component.html',
   styleUrl: './recovery.component.scss'

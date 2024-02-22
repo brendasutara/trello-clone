@@ -1,24 +1,69 @@
 <h1 class="font-bold text-blue-p text-base text-center pb-7">
   Iniciar sesión en Trello
 </h1>
-<form novalidate class="space-y-4">
-  <div class="relative space-y-4">
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Introduzca su nombre"
-    />
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Introduzca el correo electrónico"
-    />
+<form [formGroup]="form" (ngSubmit)="doLogin()" novalidate class="space-y-4">
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        #nameInput
+        formControlName="email"
+        type="email"
+        placeholder="Introduzca el correo electrónico"
+      />
+      <button type="button" class="text-gray-500 p-2 absolute right-2" (click)="nameInput.focus()">
+        <fa-icon [icon]="faPen"></fa-icon>
+      </button>
+    </div>
+    <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
+      <p
+        *ngIf="form.controls.email.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.email.hasError('email')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
+  </div>
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        #nameInput
+        formControlName="password"
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Introduzca el correo electrónico"
+      />
+      <button type="button" class="text-gray-500 p-2 absolute right-2" (click)="showPassword = !showPassword">
+        <fa-icon [icon]="showPassword ? faEye : faEyeSlash"></fa-icon>
+      </button>
+    </div>
+    <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
+      <p
+        *ngIf="form.controls.email.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.email.hasError('email')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
   </div>
   <div class="relative">
     <app-btn
       routerLink="/app/boards"
-      [typeBtn]="'submit'"
-      [color]="'apple'">
+      typeBtn="submit"
+      color="apple"
+      [loading]="status === 'loading'">
       Continuar
     </app-btn>
   </div>

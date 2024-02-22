@@ -5,6 +5,7 @@ import { BackgroundComponent } from '../../components/background/background.comp
 import { FooterComponent } from '../../components/footer/footer.component';
 import { BtnComponent } from '../../../shared/components/btn/btn.component';
 import { RegisterFormComponent } from '../../components/register-form/register-form.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ import { RegisterFormComponent } from '../../components/register-form/register-f
     BackgroundComponent,
     FooterComponent,
     BtnComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    HeaderComponent
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'

@@ -1,52 +1,133 @@
 <h1 class="font-bold text-blue-p text-base text-center pb-7">
   Regístrate para continuar
 </h1>
-<form novalidate class="space-y-4">
-  <div class="relative space-y-4">
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Introduzca su nombre"
-    />
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Introduzca el correo electrónico"
-    />
-    <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Introducir contraseña"
-    />
-    <div>
+<form [formGroup]="form" novalidate class="space-y-4" (ngSubmit)="register()">
+  <!-- nombre -->
+  <div>
+    <div class="relative">
       <input
-      class="w-full bg-gray-50 rounded border-2 border-gray-300"
-      type="text"
-      placeholder="Confirma contraseña"
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        #nameInput
+        formControlName="name"
+        type="text"
+        name="name"
+        placeholder="Introduzca su nombre"
       />
-      <p class="text-xs pt-1">
-        <span>Al registrarme, acepto los</span>
-        <span class="text-blue-500">
-          <a href="https://www.atlassian.com/legal/cloud-terms-of-service">
-            Términos de servicio de Atlassian Cloud
-          </a>
-        </span>
-        <span>y reconozco la </span>
-        <span class="text-blue-500">
-          <a href="https://www.atlassian.com/legal/privacy-policy#what-this-policy-covers">
-            Política de privacidad.
-          </a>
-        </span>
+    </div>
+    <div *ngIf="form.controls.name.touched && form.controls.name.invalid">
+      <p
+        *ngIf="form.controls.name.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo es obligatorio
       </p>
     </div>
-
   </div>
+
+  <!-- correo -->
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        #nameInput
+        formControlName="email"
+        type="email"
+        name="email"
+        placeholder="Introduzca el correo electrónico"
+      />
+    </div>
+    <div *ngIf="form.controls.email.touched && form.controls.email.invalid">
+      <p
+        *ngIf="form.controls.email.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.email.hasError('email')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1"
+      >
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
+  </div>
+
+   <!-- Primer input Password -->
+   <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        formControlName="password"
+        placeholder="Enter password"
+        [type]="showPassword ? 'text' : 'password'"/>
+      <button
+        type="button"
+        class="text-gray-500 p-2 absolute right-2"
+        (click)="showPassword = !showPassword">
+          <fa-icon [icon]="showPassword ? faEye : faEyeSlash">
+          </fa-icon>
+      </button>
+    </div>
+    <div *ngIf="form.controls.password.touched && form.controls.password.invalid">
+      <p
+        *ngIf="form.controls.password.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.password.hasError('minlength')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
+  </div>
+  <!-- FIN Primer input Password -->
+
+  <!-- Segundo input Confirm Password -->
+  <div>
+    <div class="relative">
+      <input
+        class="w-full bg-gray-50 rounded border-2 border-gray-300"
+        formControlName="confirmPassword"
+        placeholder="Confirm password"
+        type="password"/>
+    </div>
+    <div
+      *ngIf="
+        form.controls.confirmPassword.touched &&
+        form.controls.confirmPassword.invalid">
+      <p
+        *ngIf="form.controls.confirmPassword.hasError('required')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo es obligatorio
+      </p>
+      <p
+        *ngIf="form.controls.confirmPassword.hasError('minlength')"
+        class="font-medium text-red-500 text-xs mt-1 ml-1">
+        Este campo debe ser un correo electrónico.
+      </p>
+    </div>
+  </div>
+  <!-- FIN Segundo input Confirm Password -->
+
+  <div *ngIf="form.controls.confirmPassword.touched">
+    <p
+      *ngIf="form.hasError('mismatch')"
+      class="font-medium text-red-500 text-xs mt-1 ml-1"
+    >
+      La contraseña no es la misma
+    </p>
+  </div>
+
+  <!-- Button -->
   <div class="relative">
     <app-btn
       routerLink="/app/boards"
       [typeBtn]="'submit'"
-      [color]="'apple'">
+      [color]="'apple'"
+      [loading]="status === 'loading'">
       Inscribirse
     </app-btn>
   </div>
+  <!-- FIN Button -->
 </form>

@@ -1,16 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-btn',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './btn.component.html'
 })
 export class BtnComponent {
+  @Input() disabled = false;
+  @Input() loading = false;
   @Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
-
   @Input() color: 'apple' | 'primary' | 'danger' | 'white' | 'grayLight' = 'primary';
+
+  faSpinner = faSpinner;
 
   mapColors = {
     apple: {

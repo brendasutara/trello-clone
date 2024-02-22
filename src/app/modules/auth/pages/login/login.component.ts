@@ -5,6 +5,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { BackgroundComponent } from '../../components/background/background.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { LoginFormComponent } from '../../components/login-form/login-form.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ import { LoginFormComponent } from '../../components/login-form/login-form.compo
     BackgroundComponent,
     FooterComponent,
     LoginFormComponent,
+    HeaderComponent
   ],
   templateUrl: './login.component.html'
 })
