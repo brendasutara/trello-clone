@@ -72,12 +72,12 @@
       <p
         *ngIf="form.controls.password.hasError('required')"
         class="font-medium text-red-500 text-xs mt-1 ml-1">
-        Este campo es obligatorio
+        Este campo es obligatorio.
       </p>
       <p
         *ngIf="form.controls.password.hasError('minlength')"
         class="font-medium text-red-500 text-xs mt-1 ml-1">
-        Este campo debe ser un correo electrónico.
+        Este campo debe tener más de 8 caracteres.
       </p>
     </div>
   </div>
@@ -99,12 +99,12 @@
       <p
         *ngIf="form.controls.confirmPassword.hasError('required')"
         class="font-medium text-red-500 text-xs mt-1 ml-1">
-        Este campo es obligatorio
+        Este campo es obligatorio.
       </p>
       <p
         *ngIf="form.controls.confirmPassword.hasError('minlength')"
         class="font-medium text-red-500 text-xs mt-1 ml-1">
-        Este campo debe ser un correo electrónico.
+        Este campo debe tener más de 8 caracteres.
       </p>
     </div>
   </div>
