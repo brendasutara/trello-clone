@@ -11,7 +11,7 @@ Este proyecto es un clon de Trello desarrollado en Angular utilizando CDK Angula
 
 ## Demostración
 
-El proyecto está desplegado en Vercel y puede ser accedido a través de este enlace: [Trello Clone Demo](https://trello-clone-pi-eight.vercel.app/board).
+El proyecto está desplegado en Vercel y puede ser accedido a través de este enlace: [Trello Clone Demo](https://trello-clone-pi-eight.vercel.app/app/boards).
 
 ## Capturas de pantalla
 
